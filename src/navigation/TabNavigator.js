@@ -7,6 +7,7 @@ import {
   EuroScreen, 
   BitcoinScreen 
 } from '../screens'; 
+
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => (
@@ -14,7 +15,7 @@ const TabNavigator = () => (
     screenOptions={({ route }) => ({
       tabBarIcon: ({ color, size }) => {
         const icons = {
-          Dolar: 'currency-usd',
+          Dollar: 'currency-usd',  // Mudou de 'Dolar' para 'Dollar'
           Euro: 'currency-eur',
           Bitcoin: 'bitcoin',
         };
@@ -25,7 +26,7 @@ const TabNavigator = () => (
       headerShown: false,
     })}
   >
-    <Tab.Screen name="Dólar" component={DollarScreen} />
+    <Tab.Screen name="Dollar" component={DollarScreen} options={{ title: 'Dólar' }} />
     <Tab.Screen name="Euro" component={EuroScreen} />
     <Tab.Screen name="Bitcoin" component={BitcoinScreen} />
   </Tab.Navigator>

@@ -7,7 +7,28 @@ import { getExchangeRates } from '../../services/currencyService';
 import styles from './styles';
 
 const EuroScreen = () => {
-  // Mesma implementação do DollarScreen, alterando apenas:
+  const [value, setValue] = useState('');
+  const [rates, setRates] = useState({ usd: 0, eur: 0, btc: 0 });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchRates = async () => {
+      const exchangeRates = await getExchangeRates();
+      setRates(exchangeRates);
+      setLoading(false);
+    };
+    
+    fetchRates();
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={styles.loader}>
+        <ActivityIndicator size="large" color="#3498db" />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Header />
