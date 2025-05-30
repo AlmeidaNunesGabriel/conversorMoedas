@@ -13,14 +13,19 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.almeidagabrielnunes.currencyConverter",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.almeidagabrielnunes.currencyConverter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,6 +35,12 @@
         "projectId": "11c7ba91-8e87-4b4b-b7bd-f8d3ef3bb058"
       }
     },
-    "owner": "almeidagabrielnunes"
+    "owner": "almeidagabrielnunes",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/11c7ba91-8e87-4b4b-b7bd-f8d3ef3bb058"
+    }
   }
 }
