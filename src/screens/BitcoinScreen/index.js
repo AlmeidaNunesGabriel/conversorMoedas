@@ -32,12 +32,14 @@ const BitcoinScreen = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <CurrencyInput value={value} onChange={setValue} />
-      <ConversionResult
-        currency="BTC"
-        value={value || 0}
-        rate={rates.btc}
-      />
+      <View style={styles.contentContainer}>
+        <CurrencyInput value={value} onChange={setValue} />
+        <ConversionResult
+          currency="BTC"
+          value={value || 0}
+          rate={rates.btc}
+        />
+      </View>
     </View>
   );
 };

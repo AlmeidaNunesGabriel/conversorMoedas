@@ -32,12 +32,14 @@ const EuroScreen = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <CurrencyInput value={value} onChange={setValue} />
-      <ConversionResult
-        currency="EUR"
-        value={value || 0}
-        rate={rates.eur}
-      />
+      <View style={styles.contentContainer}>
+        <CurrencyInput value={value} onChange={setValue} />
+        <ConversionResult
+          currency="EUR"
+          value={value || 0}
+          rate={rates.eur}
+        />
+      </View>
     </View>
   );
 };
