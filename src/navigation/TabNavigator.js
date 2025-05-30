@@ -7,6 +7,7 @@ import {
   EuroScreen, 
   BitcoinScreen 
 } from '../screens'; 
+import TopTabNavigator from './TopTabNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,9 +16,10 @@ const TabNavigator = () => (
     screenOptions={({ route }) => ({
       tabBarIcon: ({ color, size }) => {
         const icons = {
-          Dollar: 'currency-usd',  // Mudou de 'Dolar' para 'Dollar'
+          Dollar: 'currency-usd',
           Euro: 'currency-eur',
           Bitcoin: 'bitcoin',
+          Others: 'bank', // Ícone para as outras moedas
         };
         return <MaterialCommunityIcons name={icons[route.name]} size={size} color={color} />;
       },
@@ -29,6 +31,7 @@ const TabNavigator = () => (
     <Tab.Screen name="Dollar" component={DollarScreen} options={{ title: 'Dólar' }} />
     <Tab.Screen name="Euro" component={EuroScreen} />
     <Tab.Screen name="Bitcoin" component={BitcoinScreen} />
+    <Tab.Screen name="Others" component={TopTabNavigator} options={{ title: 'Outras' }} />
   </Tab.Navigator>
 );
 
